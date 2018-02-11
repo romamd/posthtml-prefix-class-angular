@@ -25,14 +25,14 @@ module.exports = function (options) {
             }
 
             var classNames = attrs.class && attrs.class.split(' ');
-            var ngClassNames = attrs['ng-class'];
+            var ngClassNames = attrs['[ngClass]'];
 
             if (classNames) {
                 node.attrs.class = prefixClasses(classNames, options, interpolationMap);
             }
 
             if (ngClassNames) {
-                node.attrs['ng-class'] = prefixNgClasses(ngClassNames, options);
+                node.attrs['[ngClass]'] = prefixNgClasses(ngClassNames, options);
             }
 
             return node;
